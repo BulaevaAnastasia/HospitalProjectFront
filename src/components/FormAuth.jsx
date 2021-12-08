@@ -7,7 +7,7 @@ const FormAuth = () => {
 
     const url = 'http://localhost:8000';
 
-    const { handleSubmit, register, formState: { errors } } = useForm();
+    const { handleSubmit } = useForm();
 
     const [login, setLogin] = useState();
     const [password, setPassword] = useState();
@@ -35,10 +35,10 @@ const FormAuth = () => {
             <h2>Войти в систему</h2>
 
             <label>Login:</label>
-            <input type="text" value={login} onChange={(e) => setLogin(e.target.value)} placeholder="Login" {...register("login", { required: true, minLength: { value: 6 } })} />
+            <input type="text" value={login} onChange={(e) => setLogin(e.target.value)} placeholder="Login"  />
 
             <label>Password:</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"{...register("password", { required: true, minLength: { value: 6 }, pattern: /[A-Za-z].*\d|\d.*[A-Za-z]/ })} />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
 
             <button type="submit">Войти</button>
             <button onClick={() => setReg()}>Зарегистрироваться</button>

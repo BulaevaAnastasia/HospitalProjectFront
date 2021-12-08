@@ -8,7 +8,7 @@ const FormReg = () => {
 
     const url = 'http://localhost:8000';
 
-    const { handleSubmit, register, getValues, formState: { errors } } = useForm();
+    const { handleSubmit,  getValues } = useForm();
 
     const [login, setLogin] = useState();
     const [password, setPassword] = useState();

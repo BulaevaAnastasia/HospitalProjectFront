@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
+import { doctorName } from '../src/collections';
 
 const AddApointment = () => {
 
@@ -49,9 +50,9 @@ const AddApointment = () => {
                     <label>Врач:</label>
                     <select value={doctor} onChange={(e) => setDoctor(e.target.value)}>
                         <option hidden></option>
-                        {/* {doctorName.map((item, index) => { //collections?
+                        { doctorName.map((item, index) => { 
                             return <option key={`doctorName - ${index}`}>{item.name}</option>
-                        })} */}
+                        })} 
                     </select>
                 </div>
                 <div>
