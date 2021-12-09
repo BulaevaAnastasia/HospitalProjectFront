@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 import { doctorName } from '../src/collections';
 
-const AddApointment = () => {
+const AddApointment = ({ setOldAppointment }) => {
 
     const url = 'http://localhost:8000';
 
@@ -21,7 +21,7 @@ const AddApointment = () => {
             complaint: complaint,
             userId: Cookies.get('id')
         }).then(res => {
-            //setOldResep(res.data)
+            //setOldAppointment(res.data)
             console.log(res)
             setName('');
             setDoctor('');

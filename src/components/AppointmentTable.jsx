@@ -1,15 +1,20 @@
-import React from 'react'
-import { tableHeading } from '../src/collections'
+import React from 'react';
+import { tableHeading } from '../src/collections';
 import moment from 'moment';
 
-const AppointmentTable = ({ appointment }) => {
+const AppointmentTable = ({ setOpenDeleteModal, setOpenEditModal, editDeleteObj, setObj, modal, setModal, appointment }) => {
 
     const appointmentDelete = (id, userId) => {
-
+        editDeleteObj = { id, userId }
+		    setObj(editDeleteObj)
+		    setOpenDeleteModal(true)
+		    setModal(modal = 1)
     }
 
     const appointmentEdit = (item) => {
-
+        setObj(item)
+		    setOpenEditModal(true)
+		    setModal(modal = 2)
     }
 
     return (
